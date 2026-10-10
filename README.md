@@ -1,4 +1,4 @@
-# Factory Card Game Web Prototype v0.1
+# Factory Card Game Web Prototype v0.1.1
 
 企画書 v0.2 を正本にした、アップデート前提の Web プロトタイプです。
 
@@ -9,7 +9,7 @@ ES Modules を使っているため、フォルダを HTTP サーバーで配信
 python3 -m http.server 8000
 ```
 
-ブラウザで `http://localhost:8000` を開きます。GitHub Pages / Netlify Drop にもそのまま配置できます。
+ブラウザで `http://localhost:8000` を開きます。Windowsでは `start_server.bat` も使えます。GitHub Pages / Netlify Drop にもそのまま配置できます。
 
 ## 現在入っているもの
 - 工業画面 / 戦闘画面の即時切替
@@ -38,3 +38,8 @@ python3 -m http.server 8000
 - 数値バランス全般
 
 これらはコアロジックと表示を分離しているため、後続フェーズで追加する前提です。
+
+## v0.1.1 修正
+- シミュレーション更新ごとの全DOM再描画を廃止し、操作中のクリック消失を修正。
+- pointer操作中は定期描画を止め、クリック/タップを安定化。
+- タッチ操作向けの `touch-action` を追加。
